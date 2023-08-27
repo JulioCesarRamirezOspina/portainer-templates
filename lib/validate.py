@@ -13,10 +13,14 @@ def main():
 
         schema_file = os.path.join(script_dir, '..', 'Schema.json')
         templates_file = os.path.join(script_dir, '..', 'templates.json')
+        print(schema_file)
+        print(templates_file)
 
         schema = load_json_file(schema_file)
         templates = load_json_file(templates_file)
-        
+        print(schema)
+        print(templates)
+
         validate(instance=templates, schema=schema)
         
         print('✅ templates.json is valid against the schema')

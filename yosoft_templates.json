@@ -3,6 +3,7 @@
   "templates": [
     {
       "title": "Stack con Couchdb y Angular",
+      "type": 2,
       "description": " Stack con Couchdb y Angular ",
       "note": "The agent will be deployed globally inside your cluster and available on port 9001.",
       "name": "couchdb",
@@ -28,8 +29,7 @@
           "container": "/opt/couchdb/etc/local.ini",
           "bind": "../data/couch_data/config/local.ini"
         }
-      ],
-      "type": 3
+      ]
     }
   ]
 }
