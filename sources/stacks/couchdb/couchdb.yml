@@ -3,8 +3,8 @@ services:
   db:
       image: couchdb:latest
       volumes:
-        - ../data/couch_data/database:/opt/couchdb/data
-        - ../data/couch_data/config/local.ini:/opt/couchdb/etc/local.ini
+        - ./portainer/Files/AppData/couch_data/database:/opt/couchdb/data
+        - ./portainer/Files/AppData/couch_data/config/local.ini:/opt/couchdb/etc/local.ini
       networks:
         - yosoft-network  
       deploy:
