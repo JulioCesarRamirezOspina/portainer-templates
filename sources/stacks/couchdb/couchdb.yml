@@ -6,7 +6,7 @@ services:
         - ../data/couch_data/database:/opt/couchdb/data
         - ../data/couch_data/config/local.ini:/opt/couchdb/etc/local.ini
       networks:
-        - yosoft-network
+        - yosoft-network  
       deploy:
         resources:
           limits:
@@ -17,10 +17,10 @@ services:
             memory: 128M
         labels:
           - "traefik.enable=true"
-          - "traefik.http.routers.couchdb.rule=Host(`couchdb.yosoft.app`)"
-          - "traefik.http.routers.couchdb.entrypoints=websecure"
-          - "traefik.http.routers.couchdb.tls.certresolver=myresolver"
-          - "traefik.http.services.couchdb.loadbalancer.server.port=5984" 
+          - "traefik.http.routers.`${WEB_SERVER_PORT}`.rule=Host(``${WEB_SERVER_PORT}`.yosoft.app`)"
+          - "traefik.http.routers.`${WEB_SERVER_PORT}`.entrypoints=websecure"
+          - "traefik.http.routers.`${WEB_SERVER_PORT}`.tls.certresolver=myresolver"
+          - "traefik.http.services.`${WEB_SERVER_PORT}`.loadbalancer.server.port=`${WEB_SERVER_PORT}`" 
   
 networks:
   yosoft-network:
