@@ -18,11 +18,11 @@
       "volumes": [
         {
           "container": "/opt/couchdb/data",
-          "bind": "../data/couch_data/database"
+          "bind": "/portainer/Files/AppData/couch_data/database"
         },
         {
           "container": "/opt/couchdb/etc/local.ini",
-          "bind": "../data/couch_data/config/local.ini"
+          "bind": "/portainer/Files/AppData/couch_data/config/local.ini"
         }
       ],
       "env": [
@@ -35,19 +35,6 @@
           "default": "couchdb",
           "label": "Subdominio xxx.yosoft.app",
           "name": "SUBDOMAIN"
-        },
-        {
-          "default": "wordpress",
-          "label": "Database user name",
-          "name": "MYSQL_DATABASE_USER_NAME"
-        },
-        {
-          "label": "Database password for user",
-          "name": "MYSQL_DATABASE_PASSWORD"
-        },
-        {
-          "label": "Database root password",
-          "name": "MYSQL_DATABASE_ROOT_PASSWORD"
         }
       ],
       "labels": [
