@@ -17,10 +17,10 @@ services:
             memory: 128M
         labels:
           - "traefik.enable=true"
-          - "traefik.http.routers.`${WEB_SERVER_PORT}`.rule=Host(``${WEB_SERVER_PORT}`.yosoft.app`)"
-          - "traefik.http.routers.`${WEB_SERVER_PORT}`.entrypoints=websecure"
-          - "traefik.http.routers.`${WEB_SERVER_PORT}`.tls.certresolver=myresolver"
-          - "traefik.http.services.`${WEB_SERVER_PORT}`.loadbalancer.server.port=`${WEB_SERVER_PORT}`" 
+          - "traefik.http.routers.`${SUBDOMAIN}`.rule=Host(``${SUBDOMAIN}`.yosoft.app`)"
+          - "traefik.http.routers.`${SUBDOMAIN}`.entrypoints=websecure"
+          - "traefik.http.routers.`${SUBDOMAIN}`.tls.certresolver=myresolver"
+          - "traefik.http.services.`${SUBDOMAIN}`.loadbalancer.server.port=`${WEB_SERVER_PORT}`" 
   
 networks:
   yosoft-network:
