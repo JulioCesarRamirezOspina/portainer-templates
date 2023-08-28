@@ -14404,7 +14404,6 @@
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/JulioCesarRamirezOspina/portainer-templates/main/sources/assets/img/couchdb.png",
-      "env": [],
       "repository": {
         "stackfile": "sources/stacks/couchdb/couchdb.yml",
         "url": "https://github.com/JulioCesarRamirezOspina/portainer-templates"
@@ -14418,6 +14417,37 @@
         {
           "container": "/opt/couchdb/etc/local.ini",
           "bind": "../data/couch_data/config/local.ini"
+        }
+      ],
+      "env": [
+        {
+          "default": "5984",
+          "label": "Puerto interno de red",
+          "name": "WEB_SERVER_PORT"
+        },
+        {
+          "default": "couchdb",
+          "label": "Subdominio xxx.yosoft.app",
+          "name": "SUBDOMAIN"
+        },
+        {
+          "default": "wordpress",
+          "label": "Database user name",
+          "name": "MYSQL_DATABASE_USER_NAME"
+        },
+        {
+          "label": "Database password for user",
+          "name": "MYSQL_DATABASE_PASSWORD"
+        },
+        {
+          "label": "Database root password",
+          "name": "MYSQL_DATABASE_ROOT_PASSWORD"
+        }
+      ],
+      "labels": [
+        {
+          "name": "WEB_SERVER_PORT",
+          "value": "traefik.http.routers.`${WEB_SERVER_PORT}`.rule=Host(``${WEB_SERVER_PORT}`.yosoft.app`)"
         }
       ]
     },
